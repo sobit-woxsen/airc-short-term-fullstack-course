@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Design in CSS</title>
+
+    <!-- Styles -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        width: 100%;
+        height: 100vh;
+        background-color: antiquewhite;
+      }
+
+      .form {
+        height: 100px;
+        width: 100%;
+        background: lightcoral;
+        padding: 20px;
+      }
+
+      input {
+        width: 250px;
+        height: 50px;
+        background: lightgreen;
+      }
+
+      button {
+        width: 100px;
+        height: 50px;
+      }
+
+      /* Responsive  */
+      /* Small Devices : 468px */
+
+      @media (width <= 468px) {
+        .form {
+          height: 500px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        input,
+        button {
+          width: 100%;
+        }
+      }
+
+      /* Medium Devices : 768px */
+      @media ((width > 468px) and (width <= 768px)) {
+        .form {
+          height: 350px;
+          background: plum;
+        }
+      }
+
+      /* Large Devices : 1024px */
+      @media ((width > 768px) and (width <= 1024px)) {
+        .container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .form {
+          width: 500px;
+          height: 400px;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+
+      /* Largest Devices : 1280px */
+      @media ((width > 1024px)) {
+        .container {
+          display: flex;
+          justify-content: end;
+          align-items: flex-end;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <form class="form">
+        <input type="text" placeholder="email@email.com" />
+        <input type="password" placeholder="*********" />
+        <button>Log In</button>
+      </form>
+    </main>
+  </body>
+</html>
